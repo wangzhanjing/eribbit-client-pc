@@ -1,21 +1,24 @@
 // 用户模块
 export default {
-  status () {
-    return {
-      profile: {
-        id: '',
-        avatar: '',
-        nickname: '',
-        accout: '',
-        mobile: '',
-        token: ''
-
-      }
-    }
+  namespaced: true,
+  state: {
+    profile: {
+      id: '',
+      avatar: '',
+      nickname: '',
+      accout: '',
+      mobile: '',
+      token: ''
+    },
+    // 登录后跳转的路径
+    redirectUrl: ''
   },
   mutations: {
     setUser (state, user) {
       state.profile = user
+    },
+    setRedirectUrl (state, url) {
+      state.redirectUrl = url
     }
   }
 }
